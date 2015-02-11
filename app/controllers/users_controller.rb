@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id
-      WelcomeMailer.welcome_email(@user).deliver
+      WelcomeEmailWorker.perform_async(@user.id)
       redirect_to gifs_path
     else
       render :new

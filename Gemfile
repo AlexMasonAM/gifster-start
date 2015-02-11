@@ -45,3 +45,6 @@ gem 'bitters'
 # For file uploads
 gem 'carrierwave'
 gem 'mini_magick'
+
+# For background workers
+gem 'sidekiq'
